@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Banco Pichincha</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-box {
+            width: 400px;
+            padding: 40px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+        .login-box h2 {
+            margin-bottom: 30px;
+        }
+        .login-box .form-control {
+            margin-bottom: 15px;
+        }
+        .btn-custom {
+            background-color: #f4c542;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2 class="text-center">Bienvenido a tu Banca Web</h2>
+            <form method="POST" action="{{ url_for('login') }}">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.username.label(class="form-control-label") }}
+                    {{ form.username(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.password.label(class="form-control-label") }}
+                    {{ form.password(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-custom btn-block") }}
+                </div>
+                <div class="text-right">
+                    <a href="#">¿Olvidaste tu usuario?</a><br>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+            </form>
+            <div class="text-center mt-4">
+                <button class="btn btn-outline-primary btn-block">Desbloquea tu Banca Web</button>
+                <button class="btn btn-outline-secondary btn-block">Regístrate a Banca Web</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
